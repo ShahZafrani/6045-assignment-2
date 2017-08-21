@@ -15,3 +15,6 @@ For this assignment, you need to:
     * What implementation would you use and why 
 
 Submit the source code, and a 2-page-ish 'paper' with the plots and analysis. Paper does not have to be formal, I want to see your thinking more than how good you are at word/latex/English 
+
+---
+
