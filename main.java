@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class main {
-    public static String availableOptions = "[L]inked List";
+    public static String availableOptions = "[L]inked List   |   [A]rray List";
     String availableTests = "[I]nteger Insertion Test";
     public static Scanner userInput = new Scanner(System.in);
   public static void main(String[] args) {
@@ -22,7 +22,9 @@ public class main {
         while (!timeToQuit) {
             String input = userInput.nextLine();
             if (input.contains("l")) {
-                LinkedListTest.testIntegerInsertion(getTestSize());
+                LinkedListTest.testIntegerInsertionAndRead(getTestSize());
+            } else if (input.contains("a")) {
+                ArrayListTest.testIntegerInsertionAndRead(getTestSize());
             } else if (input.contains("x")) {
                 timeToQuit = true;
             } else {

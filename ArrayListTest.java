@@ -1,8 +1,8 @@
 import java.util.*;
 
-public class LinkedListTest {
+public class ArrayListTest {
   
-   static String structureToTest = "Linked List";
+   static String structureToTest = "Array List";
    
    // Change this for a more accurate average performance
    static int timesToRun = 3;
@@ -12,13 +12,13 @@ public class LinkedListTest {
       int insertSumTime = 0;
       int readSumTime = 0;
       for(int i = 0; i < timesToRun; i++) {
-        LinkedList<Integer> linkList = new LinkedList<Integer>();
+        ArrayList<Integer> arrList = new ArrayList<Integer>();
         long startTime = System.currentTimeMillis();
         for (int j = 0; j < testSize; j++) {
-           linkList.add(j);
+           arrList.add(j);
         }
         long stopTime = System.currentTimeMillis();
-        if(linkList.size() != testSize) {
+        if(arrList.size() != testSize) {
           System.out.println("Error running test. Give student a failing grade.");
         } else {
         long elapsedTime = stopTime - startTime;
@@ -27,7 +27,7 @@ public class LinkedListTest {
         int out = 0;
         startTime = System.currentTimeMillis();
         for (int k = 0; k < testSize; k++) {
-           out = linkList.get(k);
+           out = arrList.get(k);
         }
         stopTime = System.currentTimeMillis();
         elapsedTime = stopTime - startTime;
