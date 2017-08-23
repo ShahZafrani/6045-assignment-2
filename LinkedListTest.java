@@ -1,21 +1,30 @@
 import java.util.*;
 
 public class LinkedListTest {
-   public static void main(String[] args) {
-
-      int testSize = 10000000;
+  
+   static String structureToTest = "Linked List";
+   
+   // Change this for a more accurate average performance
+   static int timesToRun = 3;
+   public static void testIntegerInsertion(int testSize) {
       
-      String structureToTest = "Linked List";
-      
-      String typeOfTest = "Integer Insertion Test";
-      
-      long startTime = System.currentTimeMillis();
-      LinkedList<Integer> linkList = new LinkedList<Integer>(); 
-      for (int i = 0; i < testSize; i++) {
-         linkList.add(i);
+      String typeOfTest = "Integer Insertion Test"; 
+      int sumTime = 0;
+      for(int i = 0; i < timesToRun; i++) {
+        LinkedList<Integer> linkList = new LinkedList<Integer>();
+        long startTime = System.currentTimeMillis();
+        for (int j = 0; j < testSize; j++) {
+           linkList.add(j);
+        }
+        long stopTime = System.currentTimeMillis();
+        if(linkList.size() != testSize) {
+          System.out.println("Error running test. Give student a failing grade.");
+        } else {
+        long elapsedTime = stopTime - startTime;
+        sumTime += elapsedTime;
+        }
       }
-      long stopTime = System.currentTimeMillis();
-      long elapsedTime = stopTime - startTime;
-      System.out.println("Elapsed Time for " + structureToTest + " " + typeOfTest + " of " + testSize + " elements is: " + elapsedTime + " milliseconds");
+      float averageTime = sumTime/timesToRun;
+      System.out.println("Average Time for " + structureToTest + " " + typeOfTest + " of " + testSize + " elements after " + timesToRun + " runs is: " + averageTime + " milliseconds");
    }
 }
