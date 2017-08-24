@@ -4,9 +4,7 @@ public class ArrayListTest {
   
    static String structureToTest = "Array List";
    
-   // Change this for a more accurate average performance
-   static int timesToRun = 3;
-   public static void testIntegerInsertionAndRead(int testSize) {
+   public static void testIntegerInsertionAndRead(int testSize, int timesToRun) {
       
       String typeOfTest = "Integer Insertion Test"; 
       int insertSumTime = 0;

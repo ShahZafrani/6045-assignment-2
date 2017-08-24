@@ -1,22 +1,21 @@
 import java.util.*;
 
-public class LinkedListTest {
+public class HashMapTest {
   
-   static String structureToTest = "Linked List";
+   static String structureToTest = "Hash Map";
    
    public static void testIntegerInsertionAndRead(int testSize, int timesToRun) {
       
-      String typeOfTest = "Integer Insertion Test"; 
       int insertSumTime = 0;
       int readSumTime = 0;
       for(int i = 0; i < timesToRun; i++) {
-        LinkedList<Integer> linkList = new LinkedList<Integer>();
+        HashMap<Integer, Integer> hashPipe = new HashMap<Integer, Integer>();
         long startTime = System.currentTimeMillis();
         for (int j = 0; j < testSize; j++) {
-           linkList.add(j);
+           hashPipe.put(j,j);
         }
         long stopTime = System.currentTimeMillis();
-        if(linkList.size() != testSize) {
+        if(hashPipe.size() != testSize) {
           System.out.println("Error running test. Give student a failing grade.");
         } else {
         long elapsedTime = stopTime - startTime;
@@ -25,7 +24,7 @@ public class LinkedListTest {
         int out = 0;
         startTime = System.currentTimeMillis();
         for (int k = 0; k < testSize; k++) {
-           out = linkList.get(k);
+           out = hashPipe.get(k);
         }
         stopTime = System.currentTimeMillis();
         elapsedTime = stopTime - startTime;

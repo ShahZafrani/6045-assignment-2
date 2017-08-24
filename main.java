@@ -1,8 +1,7 @@
 import java.util.*;
 
 public class main {
-    public static String availableOptions = "[L]inked List   |   [A]rray List";
-    String availableTests = "[I]nteger Insertion Test";
+    public static String availableOptions = "[L]inked List   |   [A]rray List    |    [H]ash Map    |    [V]ector";
     public static Scanner userInput = new Scanner(System.in);
   public static void main(String[] args) {
     
@@ -21,11 +20,15 @@ public class main {
     boolean timeToQuit = false;
         while (!timeToQuit) {
             String input = userInput.nextLine();
-            if (input.contains("l")) {
-                LinkedListTest.testIntegerInsertionAndRead(getTestSize());
-            } else if (input.contains("a")) {
-                ArrayListTest.testIntegerInsertionAndRead(getTestSize());
-            } else if (input.contains("x")) {
+            if (input.equalsIgnoreCase("l")) {
+                LinkedListTest.testIntegerInsertionAndRead(getTestSize(),  getTimesToRun());
+            } else if (input.equalsIgnoreCase("a")) {
+                ArrayListTest.testIntegerInsertionAndRead(getTestSize(), getTimesToRun());
+            } else if (input.equalsIgnoreCase("h")) {
+                HashMapTest.testIntegerInsertionAndRead(getTestSize(),  getTimesToRun());
+            }  else if (input.equalsIgnoreCase("v")) {
+                VectorTest.testIntegerInsertionAndRead(getTestSize(),  getTimesToRun());
+            }  else if (input.equalsIgnoreCase("x")) {
                 timeToQuit = true;
             } else {
                 System.out.println("Not a valid input. Try again.");
@@ -40,14 +43,14 @@ public class main {
     int size = 1;
     while (!inputGathered) {
       String input = userInput.nextLine();
-      if (input.contains("h")) {
+      if (input.equalsIgnoreCase("h")) {
           size = 100000;
           inputGathered = true;
-      } else if (input.contains("m")) {
+      } else if (input.equalsIgnoreCase("m")) {
           size = 1000000;
           inputGathered = true;
-      } else if (input.contains("t")) {
-          size = 10000000;
+      } else if (input.equalsIgnoreCase("t")) {
+          size = 1000;
           inputGathered = true;
       } else {
           System.out.println("Not a valid input. Try again.");
@@ -56,8 +59,33 @@ public class main {
     return size;
   }
   
+    static int getTimesToRun(){
+    printTimesToRunInstructions();
+    boolean inputGathered = false;
+    int ttr = 1;
+    while (!inputGathered) {
+      String input = userInput.nextLine();
+      try {
+        ttr = Integer.parseInt(input);
+      } catch (NumberFormatException e) {
+        System.out.println("Just use the digits please. Try again.");
+      }
+      if ((ttr >= 2) && (ttr <=10)) {
+            inputGathered = true;
+      } else {
+          System.out.println("Not a valid input. Try again.");
+      }
+    }
+    return ttr;
+  }
+  
   static void printElementSizeInstructions(){
       System.out.println("How many elements would you like to test with?");
-      System.out.println("One [H]undred Thousand, One [M]illion, or [T]en Million");
+      System.out.println("One [T]housand, One [H]undred Thousand, or One [M]illion");
+  }
+  
+  static void printTimesToRunInstructions(){
+      System.out.println("How many tests would you like the average of");
+      System.out.println("Input a positive integer between 2 and 10");
   }
 }
