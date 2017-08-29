@@ -20,23 +20,32 @@ Original Assignment Instructions (avaiable [here](https://github.com/okaram/Algo
 
 Submit the source code, and a 2-page-ish 'paper' with the plots and analysis. Paper does not have to be formal, I want to see your thinking more than how good you are at word/latex/English 
 
-
 <div style="page-break-after: always;"></div> 
+
+
 
 
 ### First Impressions and Runtime Assumptions
 
-I chose to compare read and write operations using Integers and Strings on 4 different data structures: LinkedList, HashMap, Vector, and ArrayList. 
+​	I chose to compare read and write operations using Integers and Strings on 4 different data structures: LinkedList, HashMap, Vector, and ArrayList. When choosing these I assumed that the HashMap would be the fastest for reads and writes, followed by Vector then ArrayList, with LinkedList lagging behind. I didn't have a very scientific reason for expecting HashMap to be the fastest, but have always heard people say it's the fastest. Vectors and ArrayLists should be blazingly fast because  they both function as arrays under the hood. LinkedList reads are expected to be slow because of their node based implementation. 
+
+
 
 ### Test Implementation
 
-I chose to insert integers and strings in an ordered manner for each data structure. This can lead to skewed results (such as data structures that benefit from being ordered will outperform hash maps). 
+​	I chose to insert integers and strings in an ordered manner for each data structure. This can lead to data structures that benefit from being ordered performing better than ones that don't. The tests were designed to insert objects (integers and then strings) and then read each one of them. This is done with input sizes of a hundred thousand elements and one million elements. These tests are averaged over the course of ten runs. The code to implement these tests was deceptively easy to write, so I wrote the test once for LinkedList and then copy-pasted it to make the other four test cases while only changing two or three lines. In many scenarios having large amounts of identical code is problematic, here it makes the test code easier to read and work with. I also decided to implement the program as a command line interface with inputs reminiscent of some older DOS programs for aesthetic purposes.  
+
+
 
 ### Results
 
 
 
+![integerTestPlot](.\images\integerTestPlot.png)
+
+![stringTestPlot](.\images\stringTestPlot.png)
+
 
 ### What I Learned
 
-
+Next time I should output to csv. I should use a more powerful machine. I should test inserting and reading larger objects. 
