@@ -45,7 +45,9 @@ Submit the source code, and a 2-page-ish 'paper' with the plots and analysis. Pa
 
 ![stringTestPlot](.\images\stringTestPlot.png)
 
+	When the tests were run I was surprised by the results of the Hash Map performance. It took significantly longer to on all of the operations compared to the Vector and the ArrayList. The LinkedList took so long to complete when handling a million elements that I had to abort the tests (for my purposes the exact completion time is less relevant than getting a good comparison). Vector and ArrayList had near identical performances with both Integer and String tests. When run multiple times, both ArrayList and Vector would alternate between having the fastest completion time. Tests with Strings tended to take close to double the time to complete (most likely because a string value takes more memory than an int value).  
+
 
 ### What I Learned
 
-Next time I should output to csv. I should use a more powerful machine. I should test inserting and reading larger objects. 
+Next time I should output to csv for easier reading of results. I should use a more powerful machine so that I can run tests with more elements and larger objects. Based on the results of this experiment I can safely say that for most implementations I would use an ArrayList over any of the other data structures. In fact, when I was working as a developer at a leading home improvement retailer the microservices we wrote used ArrayLists to store and transfer large amounts of objects. I think the theory matches the results in that the natively indexed structures (ArrayList and Vector) performed at what I would interpret as constant time, and the LinkedList (with its node reference implementation) performed at linear time with respect to the size of n. Given this data it is easy to see how the growth rates of functions greatly impact design decisions for developers every day, and this strengthens my resolve to learn more about the theory. 
