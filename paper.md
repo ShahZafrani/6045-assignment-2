@@ -41,9 +41,9 @@ Submit the source code, and a 2-page-ish 'paper' with the plots and analysis. Pa
 
 
 
-![integerTestPlot](\images\integerTestPlot.png?raw=true)
+![integerTestPlot](https://raw.githubusercontent.com/ShahZafrani/6045-assignment-2/formatting/images/integerTestPlot.png?raw=true)
 
-![stringTestPlot](\images\stringTestPlot.png?raw=true)
+![stringTestPlot](https://raw.githubusercontent.com/ShahZafrani/6045-assignment-2/formatting/images/stringTestPlot.png?raw=true)
 
 ​	When the tests were run I was surprised by the results of the Hash Map performance. It took significantly longer to on all of the operations compared to the Vector and the ArrayList. The LinkedList took so long to complete when handling a million elements that I had to abort the tests (for my purposes the exact completion time is less relevant than getting a good comparison). Vector and ArrayList had near identical performances with both Integer and String tests. When run multiple times, both ArrayList and Vector would alternate between having the fastest completion time. Tests with Strings tended to take close to double the time to complete (most likely because a string value takes more memory than an int value).  
 
